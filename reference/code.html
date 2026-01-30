@@ -1,0 +1,268 @@
+<html lang="ko"><head><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white min-h-screen font-sans antialiased pb-20">```html
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CAU Hospital Community Home V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563EB", // Royal Blue
+              "background-light": "#F3F4F6",
+              "background-dark": "#0F172A", // Slate 900
+              "surface-dark": "#1E293B", // Slate 800
+              "accent-blue": "#3B82F6",
+              "cau-blue": "#004098", // CAU Official Blue-ish
+            },
+            fontFamily: {
+              display: ["Noto Sans KR", "sans-serif"],
+              sans: ["Noto Sans KR", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              'xl': '1rem',
+              '2xl': '1.5rem',
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+<div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<button class="p-2 -ml-2 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark transition-colors">
+<span class="material-icons text-gray-600 dark:text-gray-300">menu</span>
+</button>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-primary uppercase tracking-wider">CAU Hospital</span>
+<h1 class="text-lg font-bold leading-none text-cau-blue dark:text-blue-400">커뮤니티</h1>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-surface-dark transition-colors relative">
+<span class="material-icons text-gray-600 dark:text-gray-300">notifications_none</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold shadow-lg">
+                    박
+                </div>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto space-y-6 pt-4">
+<section class="px-4">
+<div class="bg-gradient-to-br from-cau-blue to-blue-600 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<p class="text-blue-100 text-sm mb-1">2023년 10월 24일 화요일</p>
+<h2 class="text-2xl font-bold mb-4">오늘의 흑석동 날씨</h2>
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-4xl">partly_cloudy_day</span>
+<div>
+<p class="text-3xl font-bold">18°C</p>
+<p class="text-blue-100 text-xs">맑음 · 미세먼지 좋음</p>
+</div>
+</div>
+</div>
+<div class="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center min-w-[80px]">
+<p class="text-xs text-blue-100 mb-1">병원소식</p>
+<span class="material-icons text-2xl mb-1">history_edu</span>
+<p class="text-xs font-bold">100주년</p>
+</div>
+</div>
+</div>
+</section>
+<section class="pl-4">
+<div class="flex justify-between items-center pr-4 mb-3">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-icons text-accent-blue text-base">smart_display</span>
+                    건강 숏츠 &amp; 브이로그
+                </h3>
+<button class="text-xs text-gray-500 dark:text-gray-400 hover:text-primary">더보기</button>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 pr-4 hide-scrollbar snap-x">
+<div class="snap-center shrink-0 w-40 relative group cursor-pointer">
+<div class="aspect-[9/16] rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-surface-dark relative">
+<img alt="Doctor explaining x-ray" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9xJ2wCEaEMIVipeiAXbVZkXslTtXTXQRowYbAGvuwqJeByNm3wbvWvzdo7twOIyBgovtfSoS4y7iGf2hQue7yuF-3MRZQSQC2EHYWB1YxcfsXIG-Did1Kuo2py94ClTou8NjA1vvrhG2eGEjQF-TzNOU8nEwG7pJbe-ILur-haGo0csg5fjF9xyiRE-u2Oyy_3LvcOrDMN-W2fAwPxk-Ivdgm9OGjvkt_1g6yUhJ___TKzcUugOogaTP5nEDC4JHIRH0T6Z8kfGg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<span class="bg-red-600 text-[10px] px-1.5 py-0.5 rounded font-bold mb-1 inline-block">LIVE</span>
+<p class="text-sm font-bold leading-tight line-clamp-2">올바른 목 디스크 관리법</p>
+<p class="text-[10px] text-gray-300 mt-1">정형외과 이교수</p>
+</div>
+<div class="absolute top-2 right-2 bg-black/40 rounded-full p-1 backdrop-blur-sm">
+<span class="material-icons text-white text-xs">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-40 relative group cursor-pointer">
+<div class="aspect-[9/16] rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-surface-dark relative">
+<img alt="Healthy food" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHtxpmyNzQhwSowLZ2WtJCcV2r-IrS3H16mhG9KC2on9d2FmkYqUAX4G3Zcfj6dilYwNxvqDwJPnOIhkHShXPnBATXIK3LF4S0gZWQPz1FvcFKaPmqc7Q9YCs83MCcs1u5_lC9g4oUUkqprGYKaqRQ35BT57pOug5vWxT4HB-alq2KV-48F44egZaMXFlH9Yam9_kj1qcLD6gxag1qgUE6FgEF4tsBvXcXGL-qlpkIEIdY2fxhFPVefXU95Df2EyTRw-ptSnyvFCM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<p class="text-sm font-bold leading-tight line-clamp-2">당뇨 환자를 위한 식단 가이드</p>
+<p class="text-[10px] text-gray-300 mt-1">영양팀</p>
+</div>
+</div>
+</div>
+<div class="snap-center shrink-0 w-40 relative group cursor-pointer">
+<div class="aspect-[9/16] rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-surface-dark relative">
+<img alt="Nurse smiling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQBHV_QFIGz-HEGru6EkkN9H5GE7YLi5ev8S7u_911HsAMT3x_HmOwGwift5ceNpA4D0eNxUNhsZTyttGeCNqEqqvTXwjEmjHg8e-TRbI1H2UyfcquGwj5BwxGZeuEQKEexhOmSg0MTkecL99v-8hkCBssCXYN4XVHtuoHWc_LGkAcIdPj6AJlMjnfey6Fr50qiSYHv-XlUpc41YXRDcqnLiXSWduz9B3f4w-CbJT_TRPlVpXcywV-u0LBqJTAQXETlwwW7TaRGC8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<p class="text-sm font-bold leading-tight line-clamp-2">신규 간호사의 하루 VLOG</p>
+<p class="text-[10px] text-gray-300 mt-1">간호부</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 relative h-48 flex items-center group cursor-pointer">
+<img alt="Medical Seminar" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRR0mSYqiCRSmJDHq399vgPbqsBmsqpxcv-0c7-hK-3tfOCxeYopb4BmIjUFITljovYPMgA11yc_LxCPvc7kxLO-HFQkvKeJzJiB01P6qTxvyDdnzPbrUsv_mpWDDJd5qsak3yDw3IdWYCzbfIu9TfUfHoRVKfpdLZtuyi-DKL5l4YD31fxvAry7d7KjA9C_-7JwPEqdddaEblKgSgOLdsTovxBcIR25cilfgUY5nKMK2kKMDK8yUN9D7ofCPok_b1FbqUffjx4Q"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark/90 to-transparent"></div>
+<div class="relative z-10 p-6 max-w-[70%]">
+<span class="inline-block px-2 py-1 bg-accent-blue/20 text-accent-blue text-xs font-bold rounded mb-2">추천 콘텐츠</span>
+<h3 class="text-xl font-bold text-white mb-2 leading-tight">CAU 명의에게 듣는<br/>100세 건강 비결</h3>
+<p class="text-gray-300 text-xs mb-4">최신 의학 정보와 건강 상식을 쉽고 재미있게 알아보세요.</p>
+<button class="bg-primary hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors flex items-center">
+                        시청하기 <span class="material-icons text-sm ml-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 bg-white dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-icons text-green-500">quiz</span>
+<h4 class="font-bold text-gray-900 dark:text-white">매일 건강 OX 퀴즈</h4>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400">퀴즈 풀고 건강 포인트 적립하세요!</p>
+</div>
+<button class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white text-sm font-bold py-2 px-4 rounded-lg">
+                    도전하기
+                </button>
+</div>
+</section>
+<section class="px-4 space-y-4">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-icons text-purple-500 text-base">explore</span>
+                    생활 &amp; 편의
+                </h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-1 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700 flex flex-col h-full">
+<div class="flex items-center justify-between mb-3">
+<span class="material-icons text-orange-400">restaurant</span>
+<span class="text-[10px] text-gray-400">지도보기 &gt;</span>
+</div>
+<h4 class="font-bold text-sm mb-1">병원 주변 맛집</h4>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 mb-3">의료진이 추천하는 숨은 맛집</p>
+<div class="mt-auto h-24 rounded-lg bg-gray-100 dark:bg-gray-800 overflow-hidden relative">
+<img alt="Map snippet" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa8axc-Hj_W4SJOn67r_pfpdhwr3FPb1upswbz2wR-z1uB333jlWsbxbGwPl5RmlCkT9AzpicNQ47mZ-jUkG-mc6PvYzUJ5A6iQ7pt-kTA61DVCUoPZ3tdU4EAQAZ0yCxmpu7FJs2WoWgWAfTVip1uDqsVB50PzmOykpM_Pe82KSdHk_pytAvYjSl81JZtycPs4dBB7UQeSYGxuzvYWgUN5z8JO8VNomUuqXgZ6JS4vAzc4Zu6s1uf0e5GRDDOZmRrsY12DZ2rGQQ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-icons text-red-500 drop-shadow-md">place</span>
+</div>
+</div>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<div class="flex-1 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-4 text-white shadow-sm relative overflow-hidden">
+<span class="material-icons absolute -bottom-4 -right-4 text-6xl text-white/20">auto_awesome</span>
+<h4 class="font-bold text-sm mb-1 relative z-10">오늘의 운세</h4>
+<p class="text-[10px] text-indigo-100 mb-2 relative z-10">행운이 가득한 하루 되세요</p>
+<div class="mt-2 text-center">
+<span class="text-2xl font-bold relative z-10">95점</span>
+</div>
+</div>
+<div class="flex-1 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-icons text-pink-400 text-sm">headphones</span>
+<h4 class="font-bold text-sm">힐링 플레이리스트</h4>
+</div>
+<div class="flex items-center gap-3 mt-2">
+<img alt="Album Art" class="w-10 h-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb9WwCW0sbjReQSgoxddsNauC3w1t9krcvd8H2a3GIcuuR67E8-pLXzT0Hf290Qq1bYYjTLYiRDK3XF6oEchTF-rz1PLEKeWIpQYMIVA5oeUoZstZ96sx217UsVfgLKmjFP7jxMkEaAQmA-wzOKlH-2FRN3GRLdx-qovGdiEepj560Sn-7SkAObFPmRC-_AfYg-V5HIwIRK5reykj-b5RjcN7TiVoprE5ZanzvjzrEgSD1R9cvp4rgkUJFhePCisrjGx_e89NJDFI"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">마음이 편안해지는 피아노</p>
+<p class="text-[10px] text-gray-500 truncate">재생 중...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-8 px-6 py-8 bg-gray-100 dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 text-center">
+<p class="text-xs text-gray-500 mb-2">중앙대학교병원 모바일 커뮤니티</p>
+<div class="flex justify-center space-x-4 mb-4">
+<a class="text-gray-400 hover:text-primary transition-colors text-xs" href="#">이용약관</a>
+<span class="text-gray-300">|</span>
+<a class="text-gray-400 hover:text-primary transition-colors text-xs" href="#">개인정보처리방침</a>
+<span class="text-gray-300">|</span>
+<a class="text-gray-400 hover:text-primary transition-colors text-xs" href="#">고객센터</a>
+</div>
+<p class="text-[10px] text-gray-400">COPYRIGHT © CAU HOSPITAL. ALL RIGHTS RESERVED.</p>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-surface-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 safe-area-pb z-50">
+<div class="max-w-md mx-auto flex justify-between px-6 py-3">
+<button class="flex flex-col items-center justify-center space-y-1 text-primary">
+<span class="material-icons text-2xl">home</span>
+<span class="text-[10px] font-medium">홈</span>
+</button>
+<button class="flex flex-col items-center justify-center space-y-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-icons text-2xl">calendar_month</span>
+<span class="text-[10px] font-medium">예약</span>
+</button>
+<button class="flex flex-col items-center justify-center space-y-1 -mt-8 relative group">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:bg-blue-600 transition-colors border-4 border-white dark:border-background-dark">
+<span class="material-icons text-white text-2xl">add</span>
+</div>
+<span class="text-[10px] font-medium text-gray-500 mt-1">글쓰기</span>
+</button>
+<button class="flex flex-col items-center justify-center space-y-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-icons text-2xl">forum</span>
+<span class="text-[10px] font-medium">커뮤니티</span>
+</button>
+<button class="flex flex-col items-center justify-center space-y-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-icons text-2xl">person</span>
+<span class="text-[10px] font-medium">마이페이지</span>
+</button>
+</div>
+</nav>
+<script>
+        // Simple dark mode toggle for demo purposes if needed, though Tailwind handles class strategy.
+        // In a real app, this would be hooked up to system preference or a toggle switch.
+        // For this output, we assume system preference or manual class addition.
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>
