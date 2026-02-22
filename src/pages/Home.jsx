@@ -53,6 +53,58 @@ export default function Home() {
         }
     ];
 
+    const patientExperienceVideos = [
+        {
+            title: "\"흑석역 4번출구\" 뮤직비디오｜ 중앙대병원 오시는 길",
+            img: "https://img.youtube.com/vi/6TLae2xbl0k/hqdefault.jpg",
+            link: "https://youtu.be/6TLae2xbl0k?si=YtUH48f4d976K1QH"
+        },
+        {
+            title: "[고객 칭찬사연] 중앙대병원 정형외과 이재성 교수 편(1)",
+            img: "https://img.youtube.com/vi/VfsD4GEeSCY/hqdefault.jpg",
+            link: "https://youtu.be/VfsD4GEeSCY?si=Twh5gJaWNGI7NQUr"
+        }
+    ];
+
+    const publicMedicalVideos = [
+        {
+            title: "밤에 아이가 아플 땐? 🚑 우리아이 안심병원",
+            img: "https://img.youtube.com/vi/MW6aL7g4SUI/hqdefault.jpg",
+            link: "https://youtu.be/MW6aL7g4SUI?si=Vur17B-6l069iPA7"
+        },
+        {
+            title: "신종 감염병 위기, 우리는 이미 준비 중이에요",
+            img: "https://img.youtube.com/vi/DuL7lCDLbn0/hqdefault.jpg",
+            link: "https://youtu.be/DuL7lCDLbn0?si=oExczAQielvqdH8F"
+        }
+    ];
+
+    const historyVideos = [
+        {
+            title: "업무 중에 1968년으로 시간여행 하고 왔습니다🕒🤳",
+            img: "https://img.youtube.com/vi/92mbBMsGrDI/hqdefault.jpg",
+            link: "https://youtu.be/92mbBMsGrDI?si=kn9nBC7K3Hw6nLTv"
+        }
+    ];
+
+    const healthShortsVideos = [
+        {
+            title: "넘어지고 손목 아플 때 '이것' 절대 하지 마세요",
+            img: "https://img.youtube.com/vi/SgGiA-o2xsM/hqdefault.jpg",
+            link: "https://youtu.be/SgGiA-o2xsM?si=KCfLzyNeuSdF5KfM"
+        },
+        {
+            title: "요로결석, 왜 나만 자꾸 재발할까? 의사가 말하는 진짜 이유",
+            img: "https://img.youtube.com/vi/m89COla_wAE/hqdefault.jpg",
+            link: "https://youtu.be/m89COla_wAE?si=qh0MttUqsNxv3I2b"
+        },
+        {
+            title: "전립선 초음파도 마취가 필요할까?",
+            img: "https://img.youtube.com/vi/qdO8GTyXu9s/hqdefault.jpg",
+            link: "https://youtu.be/qdO8GTyXu9s?si=UzMfB5Axlv9KnwsL"
+        }
+    ];
+
     return (
         <main className="max-w-md mx-auto space-y-6 pt-4 pb-24">
             <WeatherWidget />
@@ -65,6 +117,26 @@ export default function Home() {
                 title="브이로그"
                 icon="smart_display"
                 videos={vlogVideos}
+            />
+            <ShortsBar
+                title="환자경험 콘텐츠"
+                icon="smart_display"
+                videos={patientExperienceVideos}
+            />
+            <ShortsBar
+                title="공공의료 인프라 운영"
+                icon="smart_display"
+                videos={publicMedicalVideos}
+            />
+            <ShortsBar
+                title="시간여행으로 보는 중앙대병원 역사"
+                icon="smart_display"
+                videos={historyVideos}
+            />
+            <ShortsBar
+                title="건강정보 쇼츠"
+                icon="smart_display"
+                videos={healthShortsVideos}
             />
             <ContentCards />
             <LifeConvenience />
