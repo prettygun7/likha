@@ -6,29 +6,19 @@ export default function ShortsBar() {
     // Since scraping failed, we use representative placeholders that look like the real content.
     const shorts = [
         {
-            title: "사막 한가운데서 진료실이 열렸다｜중앙대병원 이집트 의료봉사",
-            img: "https://img.youtube.com/vi/q1w-bKPgKNs/hqdefault.jpg",
-            link: "https://youtube.com/shorts/q1w-bKPgKNs?si=mQ4t4AqcYj9ecP3_"
+            title: "중앙대병원 혁신활동 챌린지 - 1",
+            img: "https://img.youtube.com/vi/9HbaooCw51g/hqdefault.jpg",
+            link: "https://youtu.be/9HbaooCw51g?si=n6IxeSgKb89YJHZI"
         },
         {
-            title: "\"흑석역 4번출구\" 뮤직비디오｜중앙대병원 오시는 길 트로트 🎶",
-            img: "https://img.youtube.com/vi/6TLae2xbl0k/hqdefault.jpg",
-            link: "https://youtube.com/shorts/6TLae2xbl0k?si=EJUiDlbefzenk9QO"
+            title: "중앙대병원 혁신활동 챌린지 - 2",
+            img: "https://img.youtube.com/vi/XRhQaNEimaM/hqdefault.jpg",
+            link: "https://youtu.be/XRhQaNEimaM?si=_RjAx8jXijX6zuWa"
         },
         {
-            title: "업무 중에 1968년으로 시간여행 하고 왔습니다 🕒",
-            img: "https://img.youtube.com/vi/92mbBMsGrDI/hqdefault.jpg",
-            link: "https://youtube.com/shorts/92mbBMsGrDI?si=rAk4vO-x5KtNfLZ1"
-        },
-        {
-            title: "밤새 CT 찍고 낮에 잠들고… 응급 CT실 나이트 근무자의 하루 🌙",
-            img: "https://img.youtube.com/vi/W3tZi2XSiZU/hqdefault.jpg",
-            link: "https://youtube.com/shorts/W3tZi2XSiZU?si=auPI7MbU0UP9S8dq"
-        },
-        {
-            title: "넘어지고 손목 아플 때 '이것' 절대 하지 마세요 🙅‍♂️",
-            img: "https://img.youtube.com/vi/SgGiA-o2xsM/hqdefault.jpg",
-            link: "https://youtube.com/shorts/SgGiA-o2xsM?si=BHqKmRDG88fUWJlB"
+            title: "중앙대병원 혁신활동 챌린지 - 3",
+            img: "https://img.youtube.com/vi/If85Ajs5psU/hqdefault.jpg",
+            link: "https://youtu.be/If85Ajs5psU?si=cDPhpXsPcpopB0uP"
         }
     ];
 
