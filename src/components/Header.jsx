@@ -10,7 +10,7 @@ export default function Header() {
                     </button>
                     <div className="flex flex-col">
                         <span className="text-xs font-medium text-primary uppercase tracking-wider">중앙대병원 혁신활동</span>
-                        <h1 className="text-lg font-bold leading-none text-cau-blue dark:text-blue-400">이지컴온 홈페이지</h1>
+                        <h1 className="text-lg font-bold leading-none text-cau-blue dark:text-blue-400">이지컴온 홈페이지에 오신걸 환영합니다😀</h1>
                     </div>
                 </div>
                 <div className="flex items-center space-x-2">
