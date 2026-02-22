@@ -105,6 +105,37 @@ export default function Home() {
         }
     ];
 
+    const cauhPlaylistVideos = [
+        {
+            title: "Believe(Love in CAUH) | Official Lyrics Video",
+            img: "https://img.youtube.com/vi/AHoXREllkR8/hqdefault.jpg",
+            link: "https://youtube.com/shorts/AHoXREllkR8?si=5Y2K_VJ_97RKpmPa"
+        },
+        {
+            title: "Believe(Love in CAUH) | 국내최초 병원 배경 K-POP 탄생",
+            img: "https://img.youtube.com/vi/zufysfE_87I/hqdefault.jpg",
+            link: "https://youtu.be/zufysfE_87I?si=8p8Vc2ZbTDesl2ZF"
+        }
+    ];
+
+    const kpopPlaylistVideos = [
+        {
+            title: "해피엔딩의 마지막에서, 난 너에게 닿아 있어 | Captured",
+            img: "https://img.youtube.com/vi/LmgsVl07t4M/hqdefault.jpg",
+            link: "https://youtu.be/LmgsVl07t4M?si=diX0NEhHfh0rBFv0"
+        },
+        {
+            title: "숨조차 잊은 채로, I’m Captured 💗",
+            img: "https://img.youtube.com/vi/YY7k4oxhirA/hqdefault.jpg",
+            link: "https://youtu.be/YY7k4oxhirA?si=kIQRHeoaOaFmg95G"
+        },
+        {
+            title: "Captured | 사랑에 빠지는 순간💗",
+            img: "https://img.youtube.com/vi/AaaC5agK2dw/hqdefault.jpg",
+            link: "https://youtu.be/AaaC5agK2dw?si=oifsYMr-dbIH-mPH"
+        }
+    ];
+
     return (
         <main className="max-w-md mx-auto space-y-6 pt-4 pb-24">
             <WeatherWidget />
@@ -137,6 +168,16 @@ export default function Home() {
                 title="건강정보 쇼츠"
                 icon="smart_display"
                 videos={healthShortsVideos}
+            />
+            <ShortsBar
+                title="CAUH 플레이리스트"
+                icon="smart_display"
+                videos={cauhPlaylistVideos}
+            />
+            <ShortsBar
+                title="K-POP 플레이리스트"
+                icon="smart_display"
+                videos={kpopPlaylistVideos}
             />
             <ContentCards />
             <LifeConvenience />
