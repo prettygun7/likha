@@ -55,27 +55,9 @@ export default function ContentCards() {
 
     return (
         <>
-            <section className="px-4 grid grid-cols-2 gap-4">
-                {/* Banner */}
-                <div className="col-span-2 bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 relative h-48 flex items-center group cursor-pointer">
-                    <img
-                        alt="Medical Seminar"
-                        className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRR0mSYqiCRSmJDHq399vgPbqsBmsqpxcv-0c7-hK-3tfOCxeYopb4BmIjUFITljovYPMgA11yc_LxCPvc7kxLO-HFQkvKeJzJiB01P6qTxvyDdnzPbrUsv_mpWDDJd5qsak3yDw3IdWYCzbfIu9TfUfHoRVKfpdLZtuyi-DKL5l4YD31fxvAry7d7KjA9C_-7JwPEqdddaEblKgSgOLdsTovxBcIR25cilfgUY5nKMK2kKMDK8yUN9D7ofCPok_b1FbqUffjx4Q"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-background-dark/90 to-transparent"></div>
-                    <div className="relative z-10 p-6 max-w-[70%]">
-                        <span className="inline-block px-2 py-1 bg-accent-blue/20 text-accent-blue text-xs font-bold rounded mb-2">추천 콘텐츠</span>
-                        <h3 className="text-xl font-bold text-white mb-2 leading-tight">CAU 명의에게 듣는<br />100세 건강 비결</h3>
-                        <p className="text-gray-300 text-xs mb-4">최신 의학 정보와 건강 상식을 쉽고 재미있게 알아보세요.</p>
-                        <button className="bg-primary hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors flex items-center">
-                            시청하기 <span className="material-icons text-sm ml-1">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-
+            <section className="px-4 space-y-4">
                 {/* Quiz */}
-                <div className="col-span-2 bg-white dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                <div className="bg-white dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-between">
                     <div>
                         <div className="flex items-center gap-2 mb-1">
                             <span className="material-icons text-green-500">quiz</span>

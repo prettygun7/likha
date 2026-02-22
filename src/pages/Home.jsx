@@ -10,7 +10,6 @@ export default function Home() {
     return (
         <main className="max-w-md mx-auto space-y-6 pt-4 pb-24">
             <WeatherWidget />
-            <HospitalNews />
             <ShortsBar />
             <ContentCards />
             <LifeConvenience />
