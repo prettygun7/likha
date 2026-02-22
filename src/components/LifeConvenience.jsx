@@ -92,16 +92,28 @@ export default function LifeConvenience() {
                         </div>
                     ))}
                 </div>
-                <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700 text-center">
-                    <a
-                        href="https://ch.cauhs.or.kr/home/conts/101010000000000.do"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-blue-500 hover:text-blue-700 font-medium inline-flex items-center gap-1"
-                    >
-                        전체 편의시설 보기
-                        <span className="material-icons text-[10px]">open_in_new</span>
-                    </a>
+                <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
+                    <div className="text-center mb-3">
+                        <a
+                            href="https://ch.cauhs.or.kr/home/conts/101010000000000.do"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-blue-500 hover:text-blue-700 font-medium inline-flex items-center gap-1"
+                        >
+                            전체 편의시설 보기
+                            <span className="material-icons text-[10px]">open_in_new</span>
+                        </a>
+                    </div>
+                    <div className="flex flex-col gap-1 items-center bg-gray-50 dark:bg-gray-800/50 rounded-lg py-3 px-4">
+                        <div className="flex justify-between w-full max-w-[140px] text-[10px]">
+                            <span className="text-gray-500 dark:text-gray-400 font-bold">TODAY</span>
+                            <span className="text-gray-900 dark:text-white font-mono font-bold">1,248</span>
+                        </div>
+                        <div className="flex justify-between w-full max-w-[140px] text-[10px]">
+                            <span className="text-gray-500 dark:text-gray-400 font-bold">TOTAL</span>
+                            <span className="text-gray-900 dark:text-white font-mono font-bold">856,392</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
