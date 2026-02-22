@@ -39,7 +39,7 @@ export default function ShortsBar() {
             <div className="flex justify-between items-center pr-4 mb-3">
                 <h3 className="text-lg font-bold flex items-center gap-2">
                     <span className="material-icons text-red-600 text-base">smart_display</span>
-                    쇼츠 영상
+                    함께 성장 챌린지
                 </h3>
                 <a
                     href="https://www.youtube.com/@%EC%9D%B4%EC%A7%80%EC%BB%B4%EC%98%A8/shorts"
