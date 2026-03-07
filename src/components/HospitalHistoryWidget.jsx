@@ -40,7 +40,6 @@ export default function HospitalHistoryWidget() {
         <section className="px-4 mt-4">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
                 <div className="bg-blue-50 text-cau-blue rounded-xl p-3 flex flex-col items-center justify-center min-w-[70px] aspect-square flex-shrink-0">
-                    <span className="material-symbols-outlined text-[24px] mb-1">history_edu</span>
                     <span className="text-[10px] font-bold text-center leading-tight">오늘의<br />병원 역사</span>
                 </div>
                 <div>
