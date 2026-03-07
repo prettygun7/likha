@@ -56,7 +56,7 @@ export default function WeatherWidget() {
                 <div className="relative z-10 flex items-center justify-between">
                     <div>
                         <p className="text-blue-100 text-xl font-medium mb-1">{formatDate()}</p>
-                        <h2 className="text-2xl font-bold leading-tight">오늘의<br />흑석동 날씨</h2>
+                        <h2 className="text-2xl font-bold leading-tight">지금,<br />흑석동 날씨는?</h2>
                     </div>
 
                     {loading ? (
