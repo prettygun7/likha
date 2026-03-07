@@ -39,8 +39,8 @@ export default function HospitalHistoryWidget() {
     return (
         <section className="px-4 mt-4">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
-                <div className="bg-blue-50 text-cau-blue rounded-xl p-3 flex flex-col items-center justify-center min-w-[70px] aspect-square flex-shrink-0">
-                    <span className="text-[10px] font-bold text-center leading-tight">오늘의<br />병원 역사</span>
+                <div className="bg-blue-50 text-cau-blue rounded-xl p-3 flex flex-col items-center justify-center min-w-[100px] flex-shrink-0">
+                    <span className="text-[20px] font-bold text-center leading-tight">오늘의<br />병원 역사</span>
                 </div>
                 <div>
                     <h3 className="text-sm font-bold text-gray-500 mb-1 flex items-center gap-1">
