@@ -39,14 +39,14 @@ export default function HospitalHistoryWidget() {
     return (
         <section className="px-4 mt-4">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
-                <div className="bg-blue-50 text-cau-blue rounded-xl p-3 flex flex-col items-center justify-center min-w-[70px]">
-                    <span className="text-sm font-medium">{todayHistory.month}.{todayHistory.day}</span>
-                    <span className="text-lg font-bold">{todayHistory.year}</span>
+                <div className="bg-blue-50 text-cau-blue rounded-xl p-3 flex flex-col items-center justify-center min-w-[70px] aspect-square flex-shrink-0">
+                    <span className="material-symbols-outlined text-[24px] mb-1">history_edu</span>
+                    <span className="text-[10px] font-bold text-center leading-tight">오늘의<br />병원 역사</span>
                 </div>
                 <div>
                     <h3 className="text-sm font-bold text-gray-500 mb-1 flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[16px]">history</span>
-                        오늘의 병원 역사
+                        <span className="material-symbols-outlined text-[16px]">calendar_month</span>
+                        {todayHistory.year}년 {todayHistory.month}월 {todayHistory.day}일
                     </h3>
                     <div className="text-gray-800 text-[15px] leading-snug">
                         {contentLines.map((line, index) => (
