@@ -1,5 +1,6 @@
 import React from 'react';
 import WeatherWidget from '../components/WeatherWidget';
+import HospitalHistoryWidget from '../components/HospitalHistoryWidget';
 import HospitalNews from '../components/HospitalNews';
 import ShortsBar from '../components/ShortsBar';
 import ContentCards from '../components/ContentCards';
@@ -139,6 +140,7 @@ export default function Home() {
     return (
         <main className="max-w-md mx-auto space-y-6 pt-4 pb-24">
             <WeatherWidget />
+            <HospitalHistoryWidget />
             <ShortsBar
                 title="함께 성장 챌린지"
                 icon="smart_display"
