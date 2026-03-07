@@ -1,6 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function LifeConvenience() {
+    const [todayCount, setTodayCount] = useState("...");
+    const [totalCount, setTotalCount] = useState("...");
+
+    useEffect(() => {
+        const fetchCounts = async () => {
+            try {
+                // Get today's date formatted as YYYY-MM-DD
+                const today = new Date();
+                const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+                // Fetch Total Visits
+                const totalRes = await fetch(`https://api.counterapi.dev/v1/cauhospital_xyz/total_visits/up`);
+                const totalData = await totalRes.json();
+
+                // Fetch Today Visits
+                const todayRes = await fetch(`https://api.counterapi.dev/v1/cauhospital_xyz/visits_${dateString}/up`);
+                const todayData = await todayRes.json();
+
+                if (totalData.count) setTotalCount(totalData.count.toLocaleString());
+                if (todayData.count) setTodayCount(todayData.count.toLocaleString());
+            } catch (error) {
+                console.error("Failed to fetch visit counts", error);
+                setTodayCount("-");
+                setTotalCount("-");
+            }
+        };
+
+        fetchCounts();
+    }, []);
     const facilities = [
         {
             name: "[한식] 소담",
@@ -107,11 +136,11 @@ export default function LifeConvenience() {
                     <div className="flex flex-col gap-1 items-center bg-gray-50 dark:bg-gray-800/50 rounded-lg py-3 px-4">
                         <div className="flex justify-between w-full max-w-[140px] text-[10px]">
                             <span className="text-gray-500 dark:text-gray-400 font-bold">TODAY</span>
-                            <span className="text-gray-900 dark:text-white font-mono font-bold">1,248</span>
+                            <span className="text-gray-900 dark:text-white font-mono font-bold">{todayCount}</span>
                         </div>
                         <div className="flex justify-between w-full max-w-[140px] text-[10px]">
                             <span className="text-gray-500 dark:text-gray-400 font-bold">TOTAL</span>
-                            <span className="text-gray-900 dark:text-white font-mono font-bold">856,392</span>
+                            <span className="text-gray-900 dark:text-white font-mono font-bold">{totalCount}</span>
                         </div>
                     </div>
                 </div>
