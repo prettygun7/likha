@@ -53,7 +53,7 @@ export default function Home() {
             link: "https://youtu.be/I_TPWPzidpg?si=drM2eNNOK231LiMB"
         },
         {
-            title: "신규 브이로그",
+            title: "밤새 일하는 CT실의 하루 #CT실 #CT실야간근무 #CT실브이로그 #병원브이로그 #의료현장",
             img: "https://img.youtube.com/vi/dNl8n6Rzstg/hqdefault.jpg",
             link: "https://youtu.be/dNl8n6Rzstg?si=ORAHaq3Uo8lsnSfV"
         }
