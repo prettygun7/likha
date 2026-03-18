@@ -10,6 +10,11 @@ import Footer from '../components/Footer';
 export default function Home() {
     const challengeVideos = [
         {
+            title: "함께 성장 챌린지(4)",
+            img: "https://img.youtube.com/vi/mpXdm33HoME/hqdefault.jpg",
+            link: "https://youtube.com/shorts/mpXdm33HoME?si=TnKU2WC5T4iq48tE"
+        },
+        {
             title: "함께 성장 챌린지(3)",
             img: "https://img.youtube.com/vi/9HbaooCw51g/hqdefault.jpg",
             link: "https://youtu.be/9HbaooCw51g?si=n6IxeSgKb89YJHZI"
@@ -48,9 +53,9 @@ export default function Home() {
             link: "https://youtu.be/I_TPWPzidpg?si=drM2eNNOK231LiMB"
         },
         {
-            title: "대학병원 신입이 말아주는 병원 총무팀 찐 현실썰(2)",
-            img: "https://img.youtube.com/vi/I_TPWPzidpg/hqdefault.jpg",
-            link: "https://youtu.be/I_TPWPzidpg?si=jqroCGXSolw_CC7F"
+            title: "사회 공헌 파트 1",
+            img: "https://img.youtube.com/vi/q1w-bKPgKNs/hqdefault.jpg",
+            link: "https://youtu.be/q1w-bKPgKNs?si=bAmg7Xhvm-OcTPPH"
         }
     ];
 
@@ -88,6 +93,19 @@ export default function Home() {
         }
     ];
 
+    const socialContributionVideos = [
+        {
+            title: "사회 공헌 (1)",
+            img: "https://img.youtube.com/vi/q1w-bKPgKNs/hqdefault.jpg",
+            link: "https://youtu.be/q1w-bKPgKNs?si=bAmg7Xhvm-OcTPPH"
+        },
+        {
+            title: "사회 공헌 (2)",
+            img: "https://img.youtube.com/vi/E2SsF2sifu4/hqdefault.jpg",
+            link: "https://youtu.be/E2SsF2sifu4?si=n3xa48xZLq3RhXpZ"
+        }
+    ];
+
     const healthShortsVideos = [
         {
             title: "넘어지고 손목 아플 때 '이것' 절대 하지 마세요",
@@ -103,6 +121,19 @@ export default function Home() {
             title: "전립선 초음파도 마취가 필요할까?",
             img: "https://img.youtube.com/vi/qdO8GTyXu9s/hqdefault.jpg",
             link: "https://youtu.be/qdO8GTyXu9s?si=UzMfB5Axlv9KnwsL"
+        }
+    ];
+
+    const hospitalSoundTrackVideos = [
+        {
+            title: "세계 최초 Hospital Sound Track",
+            img: "https://img.youtube.com/vi/V8be9rfC4FQ/hqdefault.jpg",
+            link: "https://www.youtube.com/shorts/V8be9rfC4FQ"
+        },
+        {
+            title: "세계 최초 Hospital Sound Track (2)",
+            img: "https://img.youtube.com/vi/_1sk6Vjc4ZI/hqdefault.jpg",
+            link: "https://youtu.be/_1sk6Vjc4ZI?si=qi9E-RsyBPTQPoXx"
         }
     ];
 
@@ -167,9 +198,19 @@ export default function Home() {
                 videos={historyVideos}
             />
             <ShortsBar
+                title="사회 공헌"
+                icon="smart_display"
+                videos={socialContributionVideos}
+            />
+            <ShortsBar
                 title="건강정보 쇼츠"
                 icon="smart_display"
                 videos={healthShortsVideos}
+            />
+            <ShortsBar
+                title="세계 최초 Hospital Sound Track"
+                icon="smart_display"
+                videos={hospitalSoundTrackVideos}
             />
             <ShortsBar
                 title="CAUH 플레이리스트"
