@@ -53,9 +53,9 @@ export default function Home() {
             link: "https://youtu.be/I_TPWPzidpg?si=drM2eNNOK231LiMB"
         },
         {
-            title: "사회 공헌 파트 1",
-            img: "https://img.youtube.com/vi/q1w-bKPgKNs/hqdefault.jpg",
-            link: "https://youtu.be/q1w-bKPgKNs?si=bAmg7Xhvm-OcTPPH"
+            title: "신규 브이로그",
+            img: "https://img.youtube.com/vi/dNl8n6Rzstg/hqdefault.jpg",
+            link: "https://youtu.be/dNl8n6Rzstg?si=ORAHaq3Uo8lsnSfV"
         }
     ];
 
