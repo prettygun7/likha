@@ -95,12 +95,12 @@ export default function Home() {
 
     const socialContributionVideos = [
         {
-            title: "사회 공헌 (1)",
+            title: "사막 한가운데서 진료실이 열렸다｜중앙대병원 이집트 의료봉사 #브이로그 #중앙대 #중앙대병원 #해외봉사 #esg",
             img: "https://img.youtube.com/vi/q1w-bKPgKNs/hqdefault.jpg",
             link: "https://youtu.be/q1w-bKPgKNs?si=bAmg7Xhvm-OcTPPH"
         },
         {
-            title: "사회 공헌 (2)",
+            title: "사막 한가운데서 진료실이 열렸다｜중앙대병원 이집트 의료봉사 #브이로그 #중앙대 #중앙대병원 #해외봉사 #esg",
             img: "https://img.youtube.com/vi/E2SsF2sifu4/hqdefault.jpg",
             link: "https://youtu.be/E2SsF2sifu4?si=n3xa48xZLq3RhXpZ"
         }
@@ -151,6 +151,11 @@ export default function Home() {
     ];
 
     const kpopPlaylistVideos = [
+        {
+            title: "Show Me Your Love – MABOO:Hi(마부하이) #kpop #playlist #플레이리스트 #플리 #케이팝",
+            img: "https://img.youtube.com/vi/PJGV2MfP-8g/hqdefault.jpg",
+            link: "https://youtube.com/shorts/PJGV2MfP-8g?si=36XULLhixjx_t1Mn"
+        },
         {
             title: "해피엔딩의 마지막에서, 난 너에게 닿아 있어 | Captured",
             img: "https://img.youtube.com/vi/LmgsVl07t4M/hqdefault.jpg",
