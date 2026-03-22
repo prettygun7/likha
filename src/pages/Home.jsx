@@ -10,6 +10,11 @@ import Footer from '../components/Footer';
 export default function Home() {
     const challengeVideos = [
         {
+            title: "함께 성장 챌린지(5) 사람과 병원이 자란 순간 #xg #hypnotize #playlist #kpop #플레이리스트",
+            img: "https://img.youtube.com/vi/1n65Iu2lO8s/hqdefault.jpg",
+            link: "https://youtube.com/shorts/1n65Iu2lO8s?si=J_VCjVd8GcUgUff5"
+        },
+        {
             title: "함께 성장 챌린지(4)",
             img: "https://img.youtube.com/vi/mpXdm33HoME/hqdefault.jpg",
             link: "https://youtube.com/shorts/mpXdm33HoME?si=TnKU2WC5T4iq48tE"
@@ -152,7 +157,12 @@ export default function Home() {
 
     const kpopPlaylistVideos = [
         {
-            title: "Show Me Your Love – MABOO:Hi(마부하이) #kpop #playlist #플레이리스트 #플리 #케이팝",
+            title: "(OFFICIAL AUDIO) Show Me Your Love – MABOO:Hi #kpop #playlist #idol #플레이리스트 #플리",
+            img: "https://img.youtube.com/vi/TqJjjvyHK_s/hqdefault.jpg",
+            link: "https://youtu.be/TqJjjvyHK_s?si=fn0N5gc3HbWNRG6N"
+        },
+        {
+            title: "Show Me Your Love – MABOO:Hi(VINA) #kpop #playlist #플레이리스트 #플리 #케이팝",
             img: "https://img.youtube.com/vi/PJGV2MfP-8g/hqdefault.jpg",
             link: "https://youtube.com/shorts/PJGV2MfP-8g?si=36XULLhixjx_t1Mn"
         },
