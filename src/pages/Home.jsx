@@ -136,6 +136,56 @@ export default function Home() {
 
     const hospitalSoundTrackVideos = [
         {
+            title: "[HST] Track 1. Since 1968 | 시작된 시간 #kpop  #playlist   #cafe  #cafemusic  #플레이리스트 #플리 #플리추천 #플레이리스트추천",
+            img: "https://img.youtube.com/vi/mg5zVmbKgZA/hqdefault.jpg",
+            link: "https://youtu.be/mg5zVmbKgZA?si=nzpc79oWp_VPpAUB"
+        },
+        {
+            title: "[HST] Track 2. Right Where We Began | 처음처럼, 그 자리에서 #kpop #playlist   #cafe   #cafemusic #플레이리스트 #플리",
+            img: "https://img.youtube.com/vi/u64vZY_30JY/hqdefault.jpg",
+            link: "https://youtu.be/u64vZY_30JY?si=i0TQvSun5aYICpQn"
+        },
+        {
+            title: "[HST] Track 3. Where the Day Begins | 어떤 하루의 시작 #kpop #playlist #ost  #cafe  #cafemusic #플레이리스트 #플리",
+            img: "https://img.youtube.com/vi/DCM2-07lIrE/hqdefault.jpg",
+            link: "https://youtu.be/DCM2-07lIrE?si=dWk8eQDs_lIWa8ML"
+        },
+        {
+            title: "[HST] Track 4. Through That Door | 그날의 문을 지나 #kpop #playlist #플레이리스트 #플리 #ost #cafe #cafemusic",
+            img: "https://img.youtube.com/vi/K8CErHlbLdE/hqdefault.jpg",
+            link: "https://youtu.be/K8CErHlbLdE?si=fZVz5EnsyZRUI1Jy"
+        },
+        {
+            title: "[HST] Track 5. The Ones Who Guard the Night | 밤을 지키는 사람들 #playlist #cafe #cafemusic #플레이리스트 #플리 #ost",
+            img: "https://img.youtube.com/vi/nYGfcitp04A/hqdefault.jpg",
+            link: "https://youtu.be/nYGfcitp04A?si=8AG1CsLtC2LADWU8"
+        },
+        {
+            title: "[HST] Track 6. Walking With the City | 도시와 함께 걷다 #playlist  #pop  #ost #cafe #cafemusic #플레이리스트 #플리",
+            img: "https://img.youtube.com/vi/fW6Pst5Ycu0/hqdefault.jpg",
+            link: "https://youtu.be/fW6Pst5Ycu0?si=UIzsPPt60AlN1MGA"
+        },
+        {
+            title: "[HST] Track 7. Where the Wind Once Passed | 바람이 지나간 복도 #playlist  #pop #ost #cafe #cafemusic #플레이리스트",
+            img: "https://img.youtube.com/vi/rr5DiY1Jj-U/hqdefault.jpg",
+            link: "https://youtu.be/rr5DiY1Jj-U?si=oDvZvLZCo73aw6ED"
+        },
+        {
+            title: "[HST] Track 8. A Courage Without a Name | 이름 없는 용기 #playlist #pop  #ost #cafe #cafemusic #플레이리스트 #플리",
+            img: "https://img.youtube.com/vi/p9ZEJbiZ0cc/hqdefault.jpg",
+            link: "https://youtu.be/p9ZEJbiZ0cc?si=qtHjZYL7osCo0_uD"
+        },
+        {
+            title: "[HST] Track 9. Deeper Than Yesterday | 어제보다 깊은 오늘 #playlist  #플레이리스트 #플리 #pop #ost #cafe #cafemusic",
+            img: "https://img.youtube.com/vi/uirGh3UUCyA/hqdefault.jpg",
+            link: "https://youtu.be/uirGh3UUCyA?si=czENC_95Jzrs2dif"
+        },
+        {
+            title: "[HST] Track 10. Still Being Written | 아직 끝나지 않은 이야기 #playlist #플레이리스트 #플리 #pop #ost #cafe #cafemusic",
+            img: "https://img.youtube.com/vi/c14OSQafYBk/hqdefault.jpg",
+            link: "https://youtu.be/c14OSQafYBk?si=J_RZFHWn_I4ld-Ib"
+        },
+        {
             title: "세계 최초 Hospital Sound Track",
             img: "https://img.youtube.com/vi/V8be9rfC4FQ/hqdefault.jpg",
             link: "https://www.youtube.com/shorts/V8be9rfC4FQ"
@@ -144,56 +194,6 @@ export default function Home() {
             title: "세계 최초 Hospital Sound Track (2)",
             img: "https://img.youtube.com/vi/_1sk6Vjc4ZI/hqdefault.jpg",
             link: "https://youtu.be/_1sk6Vjc4ZI?si=qi9E-RsyBPTQPoXx"
-        },
-        {
-            title: "[HST] Track 10. Still Being Written | 아직 끝나지 않은 이야기 #playlist #플레이리스트 #플리 #pop #ost #cafe #cafemusic",
-            img: "https://img.youtube.com/vi/c14OSQafYBk/hqdefault.jpg",
-            link: "https://youtu.be/c14OSQafYBk?si=J_RZFHWn_I4ld-Ib"
-        },
-        {
-            title: "[HST] Track 9. Deeper Than Yesterday | 어제보다 깊은 오늘 #playlist  #플레이리스트 #플리 #pop #ost #cafe #cafemusic",
-            img: "https://img.youtube.com/vi/uirGh3UUCyA/hqdefault.jpg",
-            link: "https://youtu.be/uirGh3UUCyA?si=czENC_95Jzrs2dif"
-        },
-        {
-            title: "[HST] Track 8. A Courage Without a Name | 이름 없는 용기 #playlist #pop  #ost #cafe #cafemusic #플레이리스트 #플리",
-            img: "https://img.youtube.com/vi/p9ZEJbiZ0cc/hqdefault.jpg",
-            link: "https://youtu.be/p9ZEJbiZ0cc?si=qtHjZYL7osCo0_uD"
-        },
-        {
-            title: "[HST] Track 7. Where the Wind Once Passed | 바람이 지나간 복도 #playlist  #pop #ost #cafe #cafemusic #플레이리스트",
-            img: "https://img.youtube.com/vi/rr5DiY1Jj-U/hqdefault.jpg",
-            link: "https://youtu.be/rr5DiY1Jj-U?si=oDvZvLZCo73aw6ED"
-        },
-        {
-            title: "[HST] Track 6. Walking With the City | 도시와 함께 걷다 #playlist  #pop  #ost #cafe #cafemusic #플레이리스트 #플리",
-            img: "https://img.youtube.com/vi/fW6Pst5Ycu0/hqdefault.jpg",
-            link: "https://youtu.be/fW6Pst5Ycu0?si=UIzsPPt60AlN1MGA"
-        },
-        {
-            title: "[HST] Track 5. The Ones Who Guard the Night | 밤을 지키는 사람들 #playlist #cafe #cafemusic #플레이리스트 #플리 #ost",
-            img: "https://img.youtube.com/vi/nYGfcitp04A/hqdefault.jpg",
-            link: "https://youtu.be/nYGfcitp04A?si=8AG1CsLtC2LADWU8"
-        },
-        {
-            title: "[HST] Track 4. Through That Door | 그날의 문을 지나 #kpop #playlist #플레이리스트 #플리 #ost #cafe #cafemusic",
-            img: "https://img.youtube.com/vi/K8CErHlbLdE/hqdefault.jpg",
-            link: "https://youtu.be/K8CErHlbLdE?si=fZVz5EnsyZRUI1Jy"
-        },
-        {
-            title: "[HST] Track 3. Where the Day Begins | 어떤 하루의 시작 #kpop #playlist #ost  #cafe  #cafemusic #플레이리스트 #플리",
-            img: "https://img.youtube.com/vi/DCM2-07lIrE/hqdefault.jpg",
-            link: "https://youtu.be/DCM2-07lIrE?si=dWk8eQDs_lIWa8ML"
-        },
-        {
-            title: "[HST] Track 2. Right Where We Began | 처음처럼, 그 자리에서 #kpop #playlist   #cafe   #cafemusic #플레이리스트 #플리",
-            img: "https://img.youtube.com/vi/u64vZY_30JY/hqdefault.jpg",
-            link: "https://youtu.be/u64vZY_30JY?si=i0TQvSun5aYICpQn"
-        },
-        {
-            title: "[HST] Track 1. Since 1968 | 시작된 시간 #kpop  #playlist   #cafe  #cafemusic  #플레이리스트 #플리 #플리추천 #플레이리스트추천",
-            img: "https://img.youtube.com/vi/mg5zVmbKgZA/hqdefault.jpg",
-            link: "https://youtu.be/mg5zVmbKgZA?si=nzpc79oWp_VPpAUB"
         }
     ];
 
