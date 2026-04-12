@@ -218,11 +218,6 @@ export default function Home() {
         },
         {
             title: "(Official Video) Captured - MABOO:Hi(마부:하이) #kpop #playlist #플레이리스트 #플리 #kpopidol #kpopshorts",
-            img: "https://img.youtube.com/vi/I_uop2hTK2g/hqdefault.jpg",
-            link: "https://youtube.com/shorts/I_uop2hTK2g?si=A-GXcMYmqs51SXTl"
-        },
-        {
-            title: "(Official Video) Captured - MABOO:Hi(마부:하이) #kpop #playlist #플레이리스트 #플리 #kpopidol #kpopshorts",
             img: "https://img.youtube.com/vi/dQCfs74w4lo/hqdefault.jpg",
             link: "https://youtu.be/dQCfs74w4lo?si=P9u5BGWCRY0XCxIV"
         },
