@@ -212,6 +212,11 @@ export default function Home() {
 
     const kpopPlaylistVideos = [
         {
+            title: "To You💖(Intro & Verse1) | MABOO:HI #kpop #playlist #kpopidol #플레이리스트 #플리 #청량 #kpopshorts #kpopgroup",
+            img: "https://img.youtube.com/vi/26wdFAZCzyk/hqdefault.jpg",
+            link: "https://youtube.com/shorts/26wdFAZCzyk?si=6I-seLf2JuI3iV5v"
+        },
+        {
             title: "(Official Video) Captured - MABOO:Hi(마부:하이) #kpop #playlist #플레이리스트 #플리 #kpopidol #kpopshorts",
             img: "https://img.youtube.com/vi/I_uop2hTK2g/hqdefault.jpg",
             link: "https://youtube.com/shorts/I_uop2hTK2g?si=A-GXcMYmqs51SXTl"
