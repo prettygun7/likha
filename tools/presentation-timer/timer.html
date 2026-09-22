@@ -1,0 +1,592 @@
+<title>발표 15분 타이머</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#0E1626;
+    --surface:#17202F;
+    --surface-2:#1E293C;
+    --line:#2A3448;
+    --ink:#E9EFF8;
+    --muted:#8DA0BC;
+    --accent:#5B8FD6;
+    --accent-ink:#0B1220;
+    --caution:#F2B544;
+    --critical:#F0655A;
+    --over-wash:#3A1414;
+    --over-line:#7A2A24;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans KR","Malgun Gothic",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    min-height:100%;
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    gap:20px;
+    padding:20px 16px 28px;
+    max-width:1040px;
+    margin:0 auto;
+  }
+
+  /* ---------- 상단 바 ---------- */
+  .bar{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .meta{display:flex;align-items:baseline;gap:10px;min-width:0}
+  .eyebrow{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;white-space:nowrap;
+  }
+  .seq{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:15px;font-weight:600;color:var(--accent);
+  }
+  .dept{
+    flex:1 1 200px;min-width:0;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:8px;
+    color:var(--ink);
+    font:inherit;font-size:14px;
+    padding:9px 12px;
+  }
+  .dept::placeholder{color:#63748F}
+  .dept:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .tools{display:flex;gap:8px;flex-wrap:wrap}
+
+  button{
+    font:inherit;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 14px;
+    cursor:pointer;
+    transition:background .12s ease,border-color .12s ease;
+  }
+  button:hover{background:var(--surface-2)}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  button[aria-pressed="false"]{color:var(--muted)}
+
+  /* ---------- 타이머 ---------- */
+  .stage{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 16px 24px;
+    transition:background .3s ease,border-color .3s ease;
+  }
+  .clock{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:600;
+    font-variant-numeric:tabular-nums;
+    font-size:clamp(4rem,17vw,9.5rem);
+    line-height:.95;
+    letter-spacing:-.02em;
+    color:var(--ink);
+    transition:color .3s ease;
+  }
+  .rail{
+    width:100%;
+    max-width:720px;
+    height:6px;
+    border-radius:99px;
+    background:#25314A;
+    overflow:hidden;
+  }
+  .fill{
+    height:100%;
+    width:0%;
+    border-radius:99px;
+    background:var(--accent);
+    transition:width .25s linear,background .3s ease;
+  }
+  .status{
+    font-size:13px;
+    color:var(--muted);
+    font-variant-numeric:tabular-nums;
+    text-align:center;
+  }
+  .controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .controls button{min-width:78px;text-align:center}
+  .primary{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--accent-ink);
+    font-weight:600;
+  }
+  .primary:hover{background:#6EA0E2;border-color:#6EA0E2}
+  .presets{
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;
+    font-size:12px;color:var(--muted);
+  }
+  .presets button{padding:6px 12px;font-size:12px;border-radius:99px}
+  .presets button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+
+  /* 상태 */
+  .stage.caution .clock{color:var(--caution)}
+  .stage.caution .fill{background:var(--caution)}
+  .stage.critical .clock{color:var(--critical)}
+  .stage.critical .fill{background:var(--critical)}
+  .stage.critical.tick .clock{color:var(--ink)}
+  .stage.over{background:var(--over-wash);border-color:var(--over-line)}
+  .stage.over .clock{color:#FFE4E1}
+  .stage.over .fill{background:var(--critical)}
+  .stage.over.tick{background:#4E1A18}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+  }
+
+  /* ---------- 기록 ---------- */
+  .log h2{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 10px;font-weight:600;
+  }
+  .table-scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:420px;font-size:13px}
+  th{
+    text-align:left;font-weight:600;color:var(--muted);
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:0 10px 8px;border-bottom:1px solid var(--line);
+  }
+  td{padding:9px 10px;border-bottom:1px solid #1F2A3C;font-variant-numeric:tabular-nums}
+  td.num{color:var(--muted);width:44px}
+  td.name{font-weight:500}
+  td.right{text-align:right}
+  .over-txt{color:var(--critical)}
+  .under-txt{color:#6FBF8B}
+  .sample td{opacity:.5}
+  .tag{
+    font-size:10px;border:1px solid var(--line);border-radius:4px;
+    padding:1px 5px;margin-left:6px;color:var(--muted);vertical-align:middle;
+  }
+  .log-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px}
+  .hint{margin:0;font-size:12px;color:#63748F;line-height:1.6}
+  kbd{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;
+    background:var(--surface);border:1px solid var(--line);border-radius:4px;
+    padding:1px 5px;color:var(--muted);
+  }
+  .ghost{background:transparent;border-color:var(--line);color:var(--muted);font-size:12px;padding:6px 10px}
+
+  /* ---------- PiP(항상 위) 창 ---------- */
+  .pip-holder{
+    display:flex;align-items:center;justify-content:center;
+    min-height:180px;border:1px dashed var(--line);border-radius:16px;
+    color:var(--muted);font-size:14px;text-align:center;padding:24px 16px;
+  }
+  body.pip-body{padding:0;background:var(--ground)}
+  body.pip-body .stage{
+    height:100%;border:0;border-radius:0;gap:10px;padding:10px 12px;justify-content:center;
+  }
+  body.pip-body .clock{font-size:clamp(2.5rem,22vw,5rem)}
+  body.pip-body .presets,body.pip-body .status{display:none}
+  body.pip-body .controls button{min-width:0;padding:6px 10px;font-size:12px}
+  body.pip-body .rail{height:4px}
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <div class="meta">
+      <span class="eyebrow">부서별 발표</span>
+      <span class="seq" id="seq">1번</span>
+    </div>
+    <input id="dept" class="dept" type="text" autocomplete="off" placeholder="발표 부서명 (예: 기획팀)">
+    <div class="tools">
+      <button id="pipBtn" type="button" hidden>항상 위로 띄우기</button>
+      <button id="fsBtn" type="button">전체화면</button>
+      <button id="soundBtn" type="button" aria-pressed="true">알림음 켜짐</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="clock" id="clock" role="timer" aria-live="off">15:00</div>
+    <div class="rail"><div class="fill" id="fill"></div></div>
+    <div class="status" id="status">대기 중 · 제한 15분</div>
+    <div class="controls">
+      <button id="toggle" class="primary" type="button">시작</button>
+      <button id="reset" type="button">리셋</button>
+      <button id="minus" type="button">−1분</button>
+      <button id="plus" type="button">+1분</button>
+      <button id="next" type="button">다음 발표</button>
+    </div>
+    <div class="presets">
+      <span>제한</span>
+      <button type="button" data-min="5" aria-pressed="false">5분</button>
+      <button type="button" data-min="10" aria-pressed="false">10분</button>
+      <button type="button" data-min="15" aria-pressed="true">15분</button>
+      <button type="button" data-min="20" aria-pressed="false">20분</button>
+      <button type="button" data-min="30" aria-pressed="false">30분</button>
+    </div>
+  </main>
+
+  <section class="log">
+    <h2>진행 기록</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>부서</th><th class="right">제한</th><th class="right">소요</th><th class="right">증감</th>
+          </tr>
+        </thead>
+        <tbody id="logBody"></tbody>
+      </table>
+    </div>
+    <div class="log-foot">
+      <p class="hint">
+        <kbd>Space</kbd> 시작·일시정지 · <kbd>R</kbd> 리셋 · <kbd>N</kbd> 다음 발표 · <kbd>F</kbd> 전체화면
+      </p>
+      <button id="clearBtn" class="ghost" type="button">기록 지우기</button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var clockEl = document.getElementById('clock');
+  var fillEl = document.getElementById('fill');
+  var statusEl = document.getElementById('status');
+  var seqEl = document.getElementById('seq');
+  var deptEl = document.getElementById('dept');
+  var toggleBtn = document.getElementById('toggle');
+  var soundBtn = document.getElementById('soundBtn');
+  var pipBtn = document.getElementById('pipBtn');
+  var logBody = document.getElementById('logBody');
+
+  var STORE = 'presentation-timer-v1';
+  var SAMPLE = [
+    { seq: 1, dept: '감염관리실', limit: 900, used: 842, sample: true },
+    { seq: 2, dept: '적정진료관리팀', limit: 900, used: 1013, sample: true }
+  ];
+
+  var limitSec = 900;
+  var remain = 900;
+  var running = false;
+  var deadline = 0;
+  var alerted = false;
+  var warned = false;
+  var soundOn = true;
+  var seq = 1;
+  var records = SAMPLE.slice();
+  var usingSample = true;
+  var audioCtx = null;
+
+  /* ---------- 저장 ---------- */
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      if (typeof data.limitSec === 'number') limitSec = data.limitSec;
+      if (typeof data.soundOn === 'boolean') soundOn = data.soundOn;
+      if (Array.isArray(data.records) && data.records.length) {
+        records = data.records;
+        usingSample = false;
+      }
+      if (typeof data.seq === 'number') seq = data.seq;
+    } catch (e) { /* 저장소를 못 읽어도 타이머는 동작한다 */ }
+  }
+  function save() {
+    try {
+      localStorage.setItem(STORE, JSON.stringify({
+        limitSec: limitSec,
+        soundOn: soundOn,
+        seq: seq,
+        records: usingSample ? [] : records
+      }));
+    } catch (e) { /* 무시 */ }
+  }
+
+  /* ---------- 표시 ---------- */
+  function fmt(sec) {
+    var t = Math.max(0, Math.floor(sec));
+    var m = Math.floor(t / 60);
+    var s = t % 60;
+    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function render() {
+    var over = remain <= 0;
+    var shown = over ? Math.floor(-remain) : Math.ceil(remain);
+    clockEl.textContent = (over ? '+' : '') + fmt(shown);
+
+    stage.classList.toggle('over', over);
+    stage.classList.toggle('critical', !over && remain <= 60);
+    stage.classList.toggle('caution', !over && remain > 60 && remain <= 300);
+
+    var ratio = limitSec > 0 ? (limitSec - remain) / limitSec : 0;
+    fillEl.style.width = Math.min(100, Math.max(0, ratio * 100)).toFixed(2) + '%';
+
+    toggleBtn.textContent = running ? '일시정지' : (remain === limitSec ? '시작' : '이어서');
+
+    var label = Math.round(limitSec / 60) + '분';
+    if (over) statusEl.textContent = '제한 ' + label + ' 초과';
+    else if (running) statusEl.textContent = '진행 중 · 제한 ' + label;
+    else statusEl.textContent = '대기 중 · 제한 ' + label;
+
+    seqEl.textContent = seq + '번';
+  }
+
+  function renderLog() {
+    logBody.innerHTML = '';
+    records.forEach(function (rec) {
+      var diff = rec.used - rec.limit;
+      var tr = document.createElement('tr');
+      if (rec.sample) tr.className = 'sample';
+
+      var td1 = document.createElement('td');
+      td1.className = 'num';
+      td1.textContent = rec.seq;
+
+      var td2 = document.createElement('td');
+      td2.className = 'name';
+      td2.textContent = rec.dept;
+      if (rec.sample) {
+        var tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = '예시';
+        td2.appendChild(tag);
+      }
+
+      var td3 = document.createElement('td');
+      td3.className = 'right';
+      td3.textContent = fmt(rec.limit);
+
+      var td4 = document.createElement('td');
+      td4.className = 'right';
+      td4.textContent = fmt(rec.used);
+
+      var td5 = document.createElement('td');
+      td5.className = 'right ' + (diff > 0 ? 'over-txt' : 'under-txt');
+      td5.textContent = (diff > 0 ? '+' : '−') + fmt(Math.abs(diff));
+
+      [td1, td2, td3, td4, td5].forEach(function (td) { tr.appendChild(td); });
+      logBody.appendChild(tr);
+    });
+  }
+
+  /* ---------- 소리 ---------- */
+  function beep(freq, dur, when) {
+    if (!soundOn) return;
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      var t0 = audioCtx.currentTime + (when || 0);
+      var osc = audioCtx.createOscillator();
+      var gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, t0);
+      gain.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(t0);
+      osc.stop(t0 + dur + 0.05);
+    } catch (e) { /* 소리는 부가 기능이므로 실패해도 무시 */ }
+  }
+
+  /* ---------- 동작 ---------- */
+  function start() {
+    deadline = Date.now() + remain * 1000;
+    running = true;
+    beep(660, 0.08);
+    render();
+  }
+  function pause() {
+    if (!running) return;
+    remain = (deadline - Date.now()) / 1000;
+    running = false;
+    render();
+  }
+  function toggle() { running ? pause() : start(); }
+
+  function reset() {
+    running = false;
+    remain = limitSec;
+    alerted = false;
+    warned = false;
+    stage.classList.remove('tick');
+    render();
+  }
+
+  function adjust(deltaMin) {
+    limitSec = Math.max(60, limitSec + deltaMin * 60);
+    if (running) {
+      deadline += deltaMin * 60000;
+      remain = (deadline - Date.now()) / 1000;
+    } else {
+      remain = Math.max(0, remain + deltaMin * 60);
+    }
+    if (remain > 0) alerted = false;
+    if (remain > 60) warned = false;
+    syncPresets();
+    save();
+    render();
+  }
+
+  function setLimit(min) {
+    limitSec = min * 60;
+    syncPresets();
+    save();
+    reset();
+  }
+
+  function syncPresets() {
+    document.querySelectorAll('.presets button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(Number(b.dataset.min) * 60 === limitSec));
+    });
+  }
+
+  function nextPresenter() {
+    var used = limitSec - remain;
+    if (used >= 1) {
+      if (usingSample) { records = []; usingSample = false; }
+      records.push({
+        seq: seq,
+        dept: deptEl.value.trim() || ('발표 ' + seq),
+        limit: limitSec,
+        used: Math.round(used)
+      });
+      seq += 1;
+      deptEl.value = '';
+      renderLog();
+      save();
+    }
+    reset();
+  }
+
+  /* ---------- 루프 ---------- */
+  setInterval(function () {
+    if (running) {
+      remain = (deadline - Date.now()) / 1000;
+      if (remain <= 60 && remain > 0 && !warned) { warned = true; beep(760, 0.12); }
+      if (remain <= 0 && !alerted) {
+        alerted = true;
+        beep(880, 0.18); beep(880, 0.18, 0.28); beep(660, 0.34, 0.56);
+      }
+    }
+    if ((running && remain <= 60) || remain <= 0) {
+      stage.classList.toggle('tick', Math.floor(Date.now() / 500) % 2 === 0);
+    } else {
+      stage.classList.remove('tick');
+    }
+    render();
+  }, 200);
+
+  /* ---------- 이벤트 ---------- */
+  toggleBtn.addEventListener('click', toggle);
+  document.getElementById('reset').addEventListener('click', reset);
+  document.getElementById('minus').addEventListener('click', function () { adjust(-1); });
+  document.getElementById('plus').addEventListener('click', function () { adjust(1); });
+  document.getElementById('next').addEventListener('click', nextPresenter);
+
+  document.querySelectorAll('.presets button').forEach(function (b) {
+    b.addEventListener('click', function () { setLimit(Number(b.dataset.min)); });
+  });
+
+  soundBtn.addEventListener('click', function () {
+    soundOn = !soundOn;
+    soundBtn.setAttribute('aria-pressed', String(soundOn));
+    soundBtn.textContent = soundOn ? '알림음 켜짐' : '알림음 꺼짐';
+    if (soundOn) beep(660, 0.08);
+    save();
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', function () {
+    records = [];
+    usingSample = false;
+    seq = 1;
+    renderLog();
+    save();
+    render();
+  });
+
+  document.getElementById('fsBtn').addEventListener('click', function () {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    var k = e.key.toLowerCase();
+    if (e.code === 'Space') { e.preventDefault(); toggle(); }
+    else if (k === 'r') { reset(); }
+    else if (k === 'n') { nextPresenter(); }
+    else if (k === 'f') { document.getElementById('fsBtn').click(); }
+  });
+
+  /* ---------- 항상 위(문서 PiP) ---------- */
+  if ('documentPictureInPicture' in window) {
+    pipBtn.hidden = false;
+    pipBtn.addEventListener('click', async function () {
+      try {
+        var pip = await window.documentPictureInPicture.requestWindow({ width: 340, height: 190 });
+        Array.prototype.forEach.call(document.styleSheets, function (ss) {
+          try {
+            var css = Array.prototype.map.call(ss.cssRules, function (r) { return r.cssText; }).join('');
+            var st = pip.document.createElement('style');
+            st.textContent = css;
+            pip.document.head.appendChild(st);
+          } catch (err) {
+            if (ss.href) {
+              var link = pip.document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = ss.href;
+              pip.document.head.appendChild(link);
+            }
+          }
+        });
+        var holder = document.createElement('div');
+        holder.className = 'pip-holder';
+        holder.textContent = '작은 창에서 진행 중입니다. 창을 닫으면 이 자리로 돌아옵니다.';
+        stage.parentNode.insertBefore(holder, stage);
+        pip.document.body.classList.add('pip-body');
+        pip.document.body.appendChild(stage);
+        pip.document.addEventListener('keydown', function (e) {
+          if (e.code === 'Space') { e.preventDefault(); toggle(); }
+        });
+        pip.addEventListener('pagehide', function () {
+          holder.parentNode.insertBefore(stage, holder);
+          holder.remove();
+        });
+      } catch (err) {
+        pipBtn.textContent = '이 브라우저에서는 불가';
+      }
+    });
+  }
+
+  /* ---------- 시작 ---------- */
+  load();
+  remain = limitSec;
+  soundBtn.setAttribute('aria-pressed', String(soundOn));
+  soundBtn.textContent = soundOn ? '알림음 켜짐' : '알림음 꺼짐';
+  syncPresets();
+  renderLog();
+  render();
+})();
+</script>
